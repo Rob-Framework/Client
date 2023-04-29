@@ -1,8 +1,10 @@
+import json
 import cv2
 import socket
 import pickle
 from envReader import getValue
 from mainLoop import Loop
+from commandHandler import handleCommand
 
 def initImgClient():
     print("connecting")
@@ -13,7 +15,6 @@ def initImgClient():
 
     s.connect((server_ip,server_port))
     print("connected")
-
 
     cap = cv2.VideoCapture(0)
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
@@ -31,7 +32,29 @@ def initImgClient():
         s.sendto((x_as_bytes),(server_ip,server_port))
 
         Loop()
-    
+
+        data = s.recv(1024)
+
+        try:
+            textData = data.decode("utf-8")
+            if textData[0] == '{' and textData[-1] == '}':
+                cmd = json.loads(textData)
+                handleCommand(cmd)
+            else:
+                split = textData.split("}{")
+                if len(split) > 1:
+                    for i in range(len(split)):
+                        if i == 0:
+                            split[i] += "}"
+                        elif i == len(split) - 1:
+                            split[i] = "{" + split[i]
+                        else:
+                            split[i] = "{" + split[i] + "}"
+                        cmd = json.loads(split[0])
+                        handleCommand(cmd)
+        except Exception:
+            pass
+
         if cv2.waitKey(5) & 0xFF == 27:
             break
 
