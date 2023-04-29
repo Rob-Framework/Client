@@ -4,3 +4,4 @@ smbus
 spidev
 numpy
 RPi.GPIO
+gpiozero

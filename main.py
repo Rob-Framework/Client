@@ -10,9 +10,13 @@ def initArdu():
         runMonitor()
 
 def initSensors():
-    if bool(getValue("USE_AIR")):
+    if getBool("USE_AIR"):
         from handlers.air import setup as airSetup
         airSetup()
+    
+    if getBool("USE_TEMPERATURE_COUNTER"):
+        from drivers.TemperatureCounter import initTemperatureCounter
+        initTemperatureCounter()
 
 initArdu()
 initSensors()
