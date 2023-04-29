@@ -6,7 +6,6 @@ pwm.setPWMFreq(50)
 def openCrab(pwm,servo):
     pwm.setServoPulse(2, servo)
 
- 
 def closeCrab(pwm,servo):
     pwm.setServoPulse(2, servo)
  
