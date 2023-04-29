@@ -1,5 +1,6 @@
 from envReader import read, getValue, getBool
 from imgClient import initImgClient
+from audioSender import initAudioSender
 
 read()
 
@@ -15,6 +16,8 @@ def initSensors():
 
 initArdu()
 initSensors()
+
+initAudioSender()
 initImgClient()
 
 def Clean():
