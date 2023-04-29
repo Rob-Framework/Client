@@ -1,4 +1,5 @@
 from envReader import getBool
+from audioSender import audioSenderLoop
 
 def Loop():
     if getBool("USE_AIR"):
@@ -16,3 +17,5 @@ def Loop():
     if getBool("USE_ORIENTATION"):
         from handlers.orientation import Run as orientationRun
         orientationRun()
+    
+    audioSenderLoop()
