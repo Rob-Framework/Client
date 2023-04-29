@@ -30,8 +30,8 @@ def verifyCheckSum(data, len):
         print("TOF data is error!")
         return 0  
  
- 
-while True:
+
+def Run():
     TOF_data=()
     time.sleep(0.05)
     if ser.inWaiting() >=32:

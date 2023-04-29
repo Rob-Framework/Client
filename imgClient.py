@@ -1,14 +1,15 @@
 import cv2
 import socket
 import pickle
+from envReader import getValue
+from mainLoop import Loop
 
 def initImgClient():
     print("connecting")
     s = socket.socket()
-    #s.setsockopt(socket.SOL_SOCKET,socket.SO_SNDBUF,1000000)
 
-    server_ip = "127.0.0.1"
-    server_port = 7777
+    server_ip = getValue("IP")
+    server_port = int(getValue("PORT"))
 
     s.connect((server_ip,server_port))
     print("connected")
@@ -28,6 +29,8 @@ def initImgClient():
         x_as_bytes = pickle.dumps(buffer)
         
         s.sendto((x_as_bytes),(server_ip,server_port))
+
+        Loop()
     
         if cv2.waitKey(5) & 0xFF == 27:
             break

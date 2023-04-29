@@ -1,4 +1,4 @@
-from main import PCA9685
+from drivers.PCA9685Driver import PCA9685
 
 pwm = PCA9685(0x40, debug=False)
 pwm.setPWMFreq(50)

@@ -15,10 +15,7 @@
    @url https://github.com/DFRobot/DFRobot_LIS
 '''
 
-import sys
-sys.path.append("../..") # set system path to top
-
-from DFRobot_LIS2DW12 import *
+from drivers.DFRobot_LIS2DW12 import *
 import time
 
 #If you want to use SPI to drive this module, uncomment the codes below, and connect the module with Raspberry Pi via SPI port
@@ -106,7 +103,7 @@ acce.set_filter_bandwidth(acce.RATE_DIV_4)
 acce.set_power_mode(acce.CONT_LOWPWRLOWNOISE2_14BIT);
 time.sleep(0.1)
 
-while True:
+def Run():
     #Request a measurement under single data conversion on demand mode.
     #acce.demand_data()
     #Get the acceleration in the three directions of xyz

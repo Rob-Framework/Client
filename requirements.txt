@@ -1,3 +1,6 @@
 pickle
 opencv-python
-wifi
+smbus
+spidev
+numpy
+RPi.GPIO

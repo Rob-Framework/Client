@@ -17,10 +17,7 @@
   @url https://github.com/DFRobot/DFRobot_LIS
 '''
 
-import sys
-sys.path.append("../..") # set system path to top
-
-from DFRobot_LIS2DW12 import *
+from drivers.DFRobot_LIS2DW12 import *
 import time
 
 #If you want to use SPI to drive this module, uncomment the codes below, and connect the module with Raspberry Pi via SPI port
@@ -106,7 +103,7 @@ acce.set_6d_threshold(acce.DEGREES_60)
 acce.set_int1_event(acce.IA6D)
 time.sleep(0.1)
 
-while True:
+def Run():
     #Get the acceleration in the three directions of xyz
     #time.sleep(0.01)
     if acce.ori_change_detected() == True:

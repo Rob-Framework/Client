@@ -11,11 +11,8 @@
   @url  https://github.com/DFRobot/DFRobot_ENS160
 '''
 from __future__ import print_function
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
-
-from DFRobot_ENS160 import *
+import time
+from drivers.DFRobot_ENS160 import *
 
 '''
   # Select communication interface I2C, please comment out SPI interface. And vise versa.
@@ -26,7 +23,6 @@ from DFRobot_ENS160 import *
 '''
 sensor = DFRobot_ENS160_I2C(i2c_addr = 0x53, bus = 1)
 # sensor = DFRobot_ENS160_SPI(cs=8, bus=0, dev=0, speed=2000000)
-
 
 def setup():
   while (sensor.begin() == False):
@@ -51,7 +47,7 @@ def setup():
   sensor.set_temp_and_hum(ambient_temp=25.00, relative_humidity=50.00)
 
 
-def loop():
+def Run():
   '''
     # Get the sensor operating status
     # Return value: 0-Normal operation, 
@@ -86,9 +82,3 @@ def loop():
 
   print()
   time.sleep(0.5)
-
-
-if __name__ == "__main__":
-  setup()
-  while True:
-    loop()
