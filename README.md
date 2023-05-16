@@ -8,7 +8,7 @@
 * Run `python main.py`
 
 ## Hardware Parts:
-[Hardware](hardware.md)
+[Hardware](documentation/hardware.md)
 #### Hand
 * Metal Robot Arm Kit for Raspberry Pi (include everything)
 
