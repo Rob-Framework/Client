@@ -75,7 +75,7 @@ When you identify the cables, you have to connect them to your driver board (L29
 * OUT4 connect two red cables of two motors you have left.
 
 
-**Note: You have to connect the four motors on your driver board (L298N) diagonally. For example, the front left motor goes with the back right motor (OUT1 and OUT2) and the front right motor goes with the back left motor (OUT3 and OUT4)!!!**
+**Note: You have to connect the four motors on your driver board (L298N) in pair. For example, the front left motor goes with the back left motor (OUT1 and OUT2) and the front right motor goes with the back right motor (OUT3 and OUT4)!!!**
 
 
 #### So when you finish with connections, you have to power all of your systems and give life to your robot!
