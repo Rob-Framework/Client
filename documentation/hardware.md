@@ -55,8 +55,7 @@ current, can be powered from the battery through the VIN terminal. It could be u
 Robot applications.
 
 
-![""](/hat.png)
-
+![""](/documentation/images/hat.png)
 
 #### Characteristic
 
