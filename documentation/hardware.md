@@ -14,6 +14,7 @@
 * Fan for Raspberry Pi
 * Raspberry Pi GPIO Edge Expansion
 
+### [SENSORS](sensors.md)
 
 #### These are the materials you have to buy to build the robotic arm.
 
@@ -54,7 +55,7 @@ current, can be powered from the battery through the VIN terminal. It could be u
 Robot applications.
 
 
-![""](/image/Screenshot_3.png)
+![""](/image/images.md)
 
 
 #### Characteristic
