@@ -7,6 +7,13 @@ So the connection is too simple the sensor has four cables.
 * RX (blue cable)
 * TX (yellow cable)
 
+Raspberry Pi Serial Port Setting
+Due to the serial port of the Raspberry Pi being for terminal debugging by default, you need to modify the Raspberry Pi setting when using the serial port. Please execute the following demand to enter the Raspberry Pi setting:
+
+sudo raspi-config
+Choose Interfacing Options ->Serial ->no -> yes and close the serial debugging function.
+
+sudo reboot
 
 If you identified the cables, connect them to the RPI4:
 

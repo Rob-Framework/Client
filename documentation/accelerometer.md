@@ -7,6 +7,9 @@ So the connection is too simple, the sensor has four cables.
 * SCL (blue cable)
 * SDA (green cable)
 
+Enable the I2C interface of the Raspberry Pi. If it is already enabled, you can skip this step. Open Terminal, type the following command, and press Enter:
+sudo raspi-config
+Then use the up and down keys to select "5 Interfacing Options", press Enter, select "P5 I2C", and press Enter to confirm "YES". Restart the Raspberry Pi main control board.
 
 If you identified the cables, connect them to the RPI4:
 
