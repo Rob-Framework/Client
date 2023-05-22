@@ -2,7 +2,7 @@ from envReader import getBool
 from audioSender import audioSenderLoop
 
 def Loop():
-    if getBool("USE_AIR"):
+    if getBool("USE_AIR_QUALITY"):
         from handlers.air import Run as airRun
         airRun()
     
