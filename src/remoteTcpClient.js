@@ -16,13 +16,10 @@ export default class remoteTcpClient {
     });
 
     this.client.on("data", async function (data) {
-      console.log(data);
       const json = data.toString().replace(/'/g, '"');
       const resp = JSON.parse(json);
       const packetId = resp["packetId"];
       const _data = resp["data"];
-
-      console.log("received: " + packetId + " data:", _data);
 
       if (packetId === 0) {
         tcpClient.getInstance.sendMessage(0, _data);
