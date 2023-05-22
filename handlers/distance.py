@@ -4,7 +4,8 @@ import serial
 import time
 import chardet
 import sys
- 
+from tcpServer import getTCPServer as getServer
+
 TOF_length = 16
 TOF_header=(87,0,255)
 TOF_system_time = 0
@@ -56,6 +57,8 @@ def Run():
                     print("TOF status is: "+str(TOF_status))
                     TOF_signal = TOF_data[j+12] | TOF_data[j+13]<<8;
                     print("TOF signal is: "+str(TOF_signal))
+
+                    getServer().sendSensorData("distance", TOF_distance)
  
  
                 break

@@ -13,6 +13,7 @@
 from __future__ import print_function
 import time
 from drivers.DFRobot_ENS160 import *
+from tcpServer import getTCPServer as getServer
 
 '''
   # Select communication interface I2C, please comment out SPI interface. And vise versa.
@@ -80,5 +81,12 @@ def Run():
   '''
   print("Carbon dioxide equivalent concentration : %u ppm" %(sensor.get_ECO2_ppm))
 
+  data = {
+    "AQI": sensor.get_AQI,
+    "TVOC": sensor.get_TVOC_ppb,
+    "CO2": sensor.get_ECO2_ppm
+  }
+  
+  getServer().sendSensorData("air", data)
   print()
   time.sleep(0.5)

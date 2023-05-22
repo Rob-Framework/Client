@@ -16,7 +16,7 @@ def audioSenderLoop():
     stream, audio = get_audio_input()
     global connection
     audio_data = stream.read(1024)
-    connection.sendall(audio_data)
+    #connection.sendall(audio_data)
  
 def Clear():
     global connection

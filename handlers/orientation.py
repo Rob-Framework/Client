@@ -19,6 +19,7 @@
 
 from drivers.DFRobot_LIS2DW12 import *
 import time
+from tcpServer import getTCPServer as getServer
 
 #If you want to use SPI to drive this module, uncomment the codes below, and connect the module with Raspberry Pi via SPI port
 #RASPBERRY_PIN_CS =  27              #Chip selection pin when SPI is selected, use BCM coding method, the number is 27, corresponding to pin GPIO2
@@ -116,6 +117,7 @@ def Run():
         Z_UP = 5    #Z is now up
       '''
       orient = acce.get_oriention()
+      getServer().sendSensorData("accelerometer", {"orientation": orient})
       if orient == acce.X_DOWN:
         print("X is down now")
       elif orient == acce.X_UP:

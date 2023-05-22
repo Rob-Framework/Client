@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+from tcpServer import getTCPServer as getServer
 
 GPIO.setmode(GPIO.BCM)
 
@@ -21,6 +22,8 @@ def Run():
     light_intensity = (frequency / 5000) * 100
 
     print("Light intensity: {:.2f}%".format(light_intensity))
+
+    getServer().sendSensorData("light", light_intensity)
 
 def Clean():
     GPIO.cleanup()

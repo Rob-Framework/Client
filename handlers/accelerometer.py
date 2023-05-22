@@ -17,6 +17,7 @@
 
 from drivers.DFRobot_LIS2DW12 import *
 import time
+from tcpServer import getTCPServer as getServer
 
 #If you want to use SPI to drive this module, uncomment the codes below, and connect the module with Raspberry Pi via SPI port
 #RASPBERRY_PIN_CS =  27              #Chip selection pin when SPI is selected, use BCM coding method, the number is 27, corresponding to pin GPIO2
@@ -112,4 +113,12 @@ def Run():
     x = acce.read_acc_x()
     y = acce.read_acc_y()
     z = acce.read_acc_z()
-    print("Acceleration [X = %.2d mg,Y = %.2d mg,Z = %.2d mg]"%(x,y,z))
+
+    data = { 
+        "x": x,
+        "y": y,
+        "z": z
+    }
+
+    getServer().sendSensorData("accelerometer", data)
+    #print("Acceleration [X = %.2d mg,Y = %.2d mg,Z = %.2d mg]"%(x,y,z))
