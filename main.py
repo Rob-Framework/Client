@@ -10,7 +10,7 @@ def initArdu():
         runMonitor()
 
 def initSensors():
-    if getBool("USE_AIR"):
+    if getBool("USE_AIR_QUALITY"):
         from handlers.air import setup as airSetup
         airSetup()
     
@@ -21,7 +21,6 @@ def initSensors():
 initArdu()
 initSensors()
 
-initAudioSender()
 initImgClient()
 
 def Clean():
