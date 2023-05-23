@@ -206,7 +206,6 @@ class DFRobot_LIS2DW12(object):
     '''
     value = self.read_reg(self.REG_CTRL_REG2)
     value = value | (1<<6)
-    #print(value)
     self.write_reg(self.REG_CTRL_REG2,value)
   
   def set_range(self,range_r):
