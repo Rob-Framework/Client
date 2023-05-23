@@ -59,19 +59,19 @@ def Run():
     #       after re-powering.
   '''
   sensor_status = sensor.get_ENS160_status()
-  print("Sensor operating status : %u" %sensor_status)
+  #print("Sensor operating status : %u" %sensor_status)
 
   '''
     # Get the air quality index calculated on the basis of UBA
     # Return value: 1-Excellent, 2-Good, 3-Moderate, 4-Poor, 5-Unhealthy
   '''
-  print("Air quality index : %u" %(sensor.get_AQI))
+  #print("Air quality index : %u" %(sensor.get_AQI))
 
   '''
     # Get TVOC concentration
     # Return value range: 0–65000, unit: ppb
   '''
-  print("Concentration of total volatile organic compounds : %u ppb" %(sensor.get_TVOC_ppb))
+  #print("Concentration of total volatile organic compounds : %u ppb" %(sensor.get_TVOC_ppb))
 
   '''
     # Get CO2 equivalent concentration calculated according to the detected data of VOCs and hydrogen (eCO2 – Equivalent CO2)
@@ -79,7 +79,7 @@ def Run():
     # Five levels: Excellent(400 - 600), Good(600 - 800), Moderate(800 - 1000), 
     #               Poor(1000 - 1500), Unhealthy(> 1500)
   '''
-  print("Carbon dioxide equivalent concentration : %u ppm" %(sensor.get_ECO2_ppm))
+  #print("Carbon dioxide equivalent concentration : %u ppm" %(sensor.get_ECO2_ppm))
 
   data = {
     "AQI": sensor.get_AQI,

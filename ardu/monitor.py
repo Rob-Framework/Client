@@ -10,8 +10,6 @@ def sendCommand(cmd):
 
 def runMonitor():
     global getch, ser
-    print("Press 'i' for sending data")
-    print("Press 'q' to quit")
     port = getValue("ARDUINO_PORT")
     baud = int(getValue("ARDUIONO_BAUD"))
 

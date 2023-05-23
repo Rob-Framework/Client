@@ -34,7 +34,7 @@ acce = DFRobot_LIS2DW12_I2C(I2C_BUS ,ADDRESS_1)
 #Chip initialization
 acce.begin()
 #Get chip id
-print('chip id :%x'%acce.get_id())
+#print('chip id :%x'%acce.get_id())
 #Chip soft reset
 acce.soft_reset()
 '''

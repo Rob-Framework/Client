@@ -38,7 +38,7 @@ def Run():
     if ser.inWaiting() >=32:
         for i in range(0,16):
             TOF_data=TOF_data+(ord(ser.read(1)),ord(ser.read(1)))
-        print(TOF_data)
+        #print(TOF_data)
         for j in range(0,16):
             if( (TOF_data[j]==TOF_header[0] and TOF_data[j+1]==TOF_header[1] and TOF_data[j+2]==TOF_header[2]) and (verifyCheckSum(TOF_data[j:TOF_length],TOF_length))):
                 if(((TOF_data[j+12]) | (TOF_data[j+13]<<8) )==0):
@@ -48,15 +48,15 @@ def Run():
  
  
                     TOF_system_time = TOF_data[j+4] | TOF_data[j+5]<<8 | TOF_data[j+6]<<16 | TOF_data[j+7]<<24;
-                    print("TOF system time is: "+str(TOF_system_time)+'ms')
+                    #print("TOF system time is: "+str(TOF_system_time)+'ms')
  
                     TOF_distance = (TOF_data[j+8]) | (TOF_data[j+9]<<8) | (TOF_data[j+10]<<16);
-                    print("TOF distance is: "+str(TOF_distance)+'mm')
+                    #print("TOF distance is: "+str(TOF_distance)+'mm')
  
                     TOF_status = TOF_data[j+11];
-                    print("TOF status is: "+str(TOF_status))
+                    #print("TOF status is: "+str(TOF_status))
                     TOF_signal = TOF_data[j+12] | TOF_data[j+13]<<8;
-                    print("TOF signal is: "+str(TOF_signal))
+                    #print("TOF signal is: "+str(TOF_signal))
 
                     getServer().sendSensorData("distance", TOF_distance)
  

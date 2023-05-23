@@ -21,7 +21,7 @@ def Run():
 
     light_intensity = (frequency / 5000) * 100
 
-    print("Light intensity: {:.2f}%".format(light_intensity))
+    #print("Light intensity: {:.2f}%".format(light_intensity))
 
     getServer().sendSensorData("light", light_intensity)
 

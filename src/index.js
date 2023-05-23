@@ -1,9 +1,11 @@
 import PyConnect from "./pyconnect.js";
 import remoteTcpClient from "./remoteTcpClient.js";
 import tcpClient from "./tcpClient.js";
+import dotenv from "dotenv";
 
-const ip = "127.0.0.1";
-const port = 7782;
+dotenv.config();
+const ip = process.env.NODE_SERVER_IP;
+const port = process.env.NODE_SERVER_PORT;
 
 (async function () {
   await PyConnect.invoke(async function () {

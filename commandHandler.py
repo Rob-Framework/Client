@@ -1,13 +1,9 @@
 from envReader import getBool
 
 def handleCommand(cmdObj):
-    print(cmdObj)
     cmd = cmdObj["command"]
-    print(cmd)
 
     if cmd == "forward" or cmd == "backward" or cmd == "left" or cmd == "right" or cmd == "stop" or cmd == "break" or cmd == "slow_stop":
-        #send to motor
-        print("is ardu command, use: ", getBool("USE_ARDUINO"))
         if getBool("USE_ARDUINO"):
             from ardu.monitor import sendCommand
             sendCommand(cmd)

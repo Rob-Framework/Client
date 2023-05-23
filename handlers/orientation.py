@@ -118,7 +118,7 @@ def Run():
       '''
       orient = acce.get_oriention()
       getServer().sendSensorData("accelerometer", {"orientation": orient})
-      if orient == acce.X_DOWN:
+      """if orient == acce.X_DOWN:
         print("X is down now")
       elif orient == acce.X_UP:
         print("X is up now")
@@ -129,4 +129,4 @@ def Run():
       elif orient == acce.Z_DOWN:
         print("Z is down now")
       elif orient == acce.Z_UP:
-        print("Z is up now")
+        print("Z is up now")"""
