@@ -1,5 +1,7 @@
 # Client
 
+https://github.com/Rob-Framework/Client/assets/45359358/3083b785-3f86-46a5-9cd2-0f151cd36f07
+
 ## How to run:
 * Client runs on `Raspberry pi 4` and `Arduino Mega`
 * Clone the repository - `git clone https://github.com/Rob-Framework/Client`

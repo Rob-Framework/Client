@@ -6,7 +6,7 @@ getch = None
 ser = None
 
 def sendCommand(cmd):
-    ser.write(cmd.enocde())
+    ser.write(cmd.encode())
 
 def runMonitor():
     global getch, ser
