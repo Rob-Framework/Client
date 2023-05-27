@@ -41,7 +41,7 @@ So the first connection will be the motor driver motor (L298N) and Arduino. The 
 * IN4
 
 
-The first two pins (ENB and ENA), connect the ENB pin of the driver board (L298N) on the PWM pin 10 of  Arduino and the ENA pin of the driver board (L298N) on the PWM pin 9 of Arduino. For the other pins of your driver board (L298N) the connection is:
+First, you have to remove the 2 jumpers on the driver board (LN298N). After that, connect the left pin on the driver board (LN298N) to the 9-pin PWM of the Arduino. Do the same thing with the right pin of the driver board (LN298N) to the 10-pin PWM of the Arduino.For the other pins of your driver board (L298N) the connection is:
 
 
 * IN1 pin of your driver board (L298N) goes on PWM pin 2 of the Arduino.
