@@ -1,5 +1,18 @@
 from envReader import getBool
 from audioSender import audioSenderLoop
+from handlers.location import getLongLat
+from tcpServer import getTCPServer as getServer
+
+def sendLongLat():
+    longlat = getLongLat()
+    long = longlat[0]
+    lat = longlat[1]
+    
+    data = {
+        "long": long,
+        "lat": lat
+    }
+    getServer().sendSensorData("location", data)
 
 def Loop():
     if getBool("USE_AIR_QUALITY"):
@@ -19,3 +32,4 @@ def Loop():
         orientationRun()
     
     audioSenderLoop()
+    sendLongLat()

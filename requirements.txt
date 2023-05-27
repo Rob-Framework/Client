@@ -5,3 +5,5 @@ spidev
 numpy
 RPi.GPIO
 gpiozero
+geocoder
+geopy

@@ -1,9 +1,11 @@
 from envReader import read, getValue, getBool
 from imgClient import initImgClient
 from audioSender import initAudioSender
+from handlers.location import init as initLocation
 
 def run():
     read()
+    initLocation()
 
     def initArdu():
         if getBool("USE_ARDUINO"):
