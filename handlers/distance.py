@@ -5,6 +5,7 @@ import time
 import chardet
 import sys
 from tcpServer import getTCPServer as getServer
+import safeguard
 
 TOF_length = 16
 TOF_header=(87,0,255)
@@ -59,6 +60,6 @@ def Run():
                     #print("TOF signal is: "+str(TOF_signal))
 
                     getServer().sendSensorData("distance", TOF_distance)
- 
+                    safeguard.getNewDistanceInfo(TOF_distance) 
  
                 break

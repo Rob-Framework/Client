@@ -1,4 +1,5 @@
 from envReader import getBool
+import safeguard
 
 def handleCommand(cmdObj):
     cmd = cmdObj["command"]
@@ -6,6 +7,7 @@ def handleCommand(cmdObj):
     if cmd == "forward" or cmd == "backward" or cmd == "left" or cmd == "right" or cmd == "stop" or cmd == "break" or cmd == "slow_stop":
         if getBool("USE_ARDUINO"):
             from ardu.monitor import sendCommand
+            safeguard.newCommand(cmd)
             sendCommand(cmd)
     elif cmd == "move_hand":
         if getBool("USE_HAND"):
