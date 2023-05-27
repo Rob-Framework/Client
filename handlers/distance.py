@@ -26,10 +26,10 @@ def verifyCheckSum(data, len):
     TOF_check=TOF_check%256
  
     if(TOF_check == data[len-1]):
-        print("TOF data is ok!")
+        #print("TOF data is ok!")
         return 1    
     else:
-        print("TOF data is error!")
+        #print("TOF data is error!")
         return 0  
  
 
