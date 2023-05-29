@@ -21,6 +21,10 @@ def run():
             from drivers.TemperatureCounter import initTemperatureCounter
             initTemperatureCounter()
 
+        if getBool("USE_DAY_NIGHT_SENSOR"):
+            from handlers.daynight import init as daynightInit
+            daynightInit()
+
     initArdu()
     initSensors()
 

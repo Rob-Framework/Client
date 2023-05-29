@@ -2,6 +2,7 @@ from envReader import getBool
 from audioSender import audioSenderLoop
 from handlers.location import getLongLat
 from tcpServer import getTCPServer as getServer
+from handlers.cpu import getCPUUsage
 
 def sendLongLat():
     longlat = getLongLat()
@@ -18,6 +19,10 @@ def Loop():
     if getBool("USE_AIR_QUALITY"):
         from handlers.air import Run as airRun
         airRun()
+
+    if (getBool("USE_DISTANCE")):
+        from handlers.distance import Run as distanceRun
+        distanceRun()
     
     if getBool("USE_LIGHT"):
         from handlers.light import Run as lightRun
@@ -31,5 +36,16 @@ def Loop():
         from handlers.orientation import Run as orientationRun
         orientationRun()
     
+    if getBool("USE_DAY_NIGHT_SENSOR"):
+        from handlers.daynight import loop as daynightRun
+        mode = daynightRun()
+        
+        data = {
+            "mode": mode
+        }
+
+        getServer().sendSensorData("daynight", data)
+
     audioSenderLoop()
     sendLongLat()
+    getCPUUsage()

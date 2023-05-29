@@ -3,7 +3,7 @@ import commandHandler
 last_command = ""
 last_distance = -1
 
-min_distance_to_stop = 10
+min_distance_to_stop = 435 # mm
 
 def newCommand(command):
     global last_command
