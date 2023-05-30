@@ -1,7 +1,7 @@
 # ROB FRAMEWORK
 
 
-## Hardwear Documentation
+## Hardware Documentation
 
 
 ### The materials you have to buy to build the robotic arm
@@ -28,17 +28,17 @@
 **The kit includes :**
 
 
-* Metal arm parts x1.
-* MG996R Servo x1.
-* MG90S Servo x3.
-* Servo Driver HAT x1.
-* Power adapter standard USB output x1.
-* Servo extension wire, 150 mm x 1.
-* Srews pack x1.
-* Srewdrivers: 2 PCS x 1.
+* Metal arm parts x1
+* MG996R Servo x1
+* MG90S Servo x3
+* Servo Driver HAT x1
+* Power adapter EU standard USB output x1.
+* Servo extension wire 150mm x1
+* Screws pack x1
+* Screwdrivers 2PCS x1
 
 
-#### Assembly guide
+#### Assemblance guide
 [Hand Doc](hand_doc.pdf)
 
 
@@ -50,7 +50,7 @@
 
 This servo driver board is an PWM/servo expansion board for the Raspberry Pi. Use
 PCA9685 chip, which expands up to 16 channels and supports 12-bit resolution for each
-channel. using an I2C interface. This board also integrates a 5V regulator with up to 3A of output.
+channel, using an I2C interface. This board also integrates a 5V regulator with up to 3A of output.
 current, can be powered from the battery through the VIN terminal. It could be used for
 Robot applications.
 
@@ -86,6 +86,3 @@ sudo raspi-config
 
 
 Choose Interfacing Options->I2C-> yes
-
-
-
