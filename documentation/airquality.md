@@ -1,18 +1,26 @@
-Connect the Gravity Air Quality Sensor - ENS160. This sensor is to detect the quality of the air.
-So the connection is too simple, the sensor has four cables.
+To connect the Gravity Air Quality Sensor - ENS160 for detecting the quality of the air, follow these steps:
 
+Gather the necessary cables and components:
 
-* Vdd 3.3v (red cable)
-* GND (black cable)
-* SDA (green cable)
-* SCL (blue cable)
+* Gravity Air Quality Sensor - ENS160
+* Raspberry Pi (RPI4) board
+* Four cables: red (Vdd 3.3v), black (GND), green (SDA), and blue (SCL)
 
-Enable Raspberry Pi I2C.(Skip this step if it is already enabled) Open terminal and input the following commands and press "Enter":
-pi@raspberrypi:~ $ sudo raspi-config
+Establish the connections between the sensor and the Raspberry Pi as follows:
 
-Then use the UP/Down keys to select "Interfacing Options", press Enter, select "P5 I2C" and press Enter to comfirm "Yes". Restart the Pi board.
+* Connect the red (Vdd 3.3v) cable to the 3.3v pin on your Raspberry Pi (pin 1).
+* Connect the black (GND) cable to the GND pin on your Raspberry Pi (e.g., pin 6, 9, or 25).
+* Connect the green (SDA) cable to the SDA pin on your Raspberry Pi (GPIO 2 or pin 3).
+* Connect the blue (SCL) cable to the SCL pin on your Raspberry Pi (GPIO 3 or pin 5).
 
-If you identified the cables, connect them to the RPI4:
+Enable the I2C interface on your Raspberry Pi if it's not already enabled:
 
+* Open the terminal.
+* Run the following command: sudo raspi-config
+* Use the UP/DOWN arrow keys to select "Interfacing Options" and press Enter.
+* Select "P5 I2C" and press Enter to confirm "Yes".
+* Restart the Raspberry Pi.
 
-First, the SDA cable of your sensor goes on the SDA pin of your board (gpio 2 or pin 3), the SCL cable of your sensor goes on the SCL pin of your board (gpio 3 or pin 5), GND cable goes on the GND pin of your board (9 pin or 6pin or 25, there is more) and last the Vdd cable goes on the 3.3v pin of your board (1 pin). When you finish with the connections, you can run the code and test your sensor.
+Once the connections are made and the I2C interface is enabled, you can proceed to run your code and test the sensor to detect the quality of the air.
+
+By following these steps, you will be able to easily connect the Gravity Air Quality Sensor - ENS160 to your Raspberry Pi and utilize it for air quality detection.
