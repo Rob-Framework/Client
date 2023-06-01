@@ -24,6 +24,10 @@ def run():
         if getBool("USE_DAY_NIGHT_SENSOR"):
             from handlers.daynight import init as daynightInit
             daynightInit()
+            
+        if getBool("USE_HUMIDITY"):
+            from handlers.humidity import init as initHumidity
+            initHumidity()
 
     initArdu()
     initSensors()
