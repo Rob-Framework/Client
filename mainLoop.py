@@ -45,6 +45,10 @@ def Loop():
         }
 
         getServer().sendSensorData("daynight", data)
+        
+    if getBool("USE_HUMIDITY"):
+        from handlers.humidity import loop as humitidyRun
+        humitidyRun()
 
     audioSenderLoop()
     sendLongLat()
