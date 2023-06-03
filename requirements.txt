@@ -7,3 +7,4 @@ RPi.GPIO
 gpiozero
 geocoder
 geopy
+Adafruit_DHT
