@@ -12,6 +12,7 @@
 '''
 from __future__ import print_function
 from DFRobot_ENS160 import *
+time.sleep(1)
 
 '''
   # Select communication interface I2C, please comment out SPI interface. And vise versa.
